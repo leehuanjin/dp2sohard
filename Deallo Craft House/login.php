@@ -1,3 +1,4 @@
+<?php include('server.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,7 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
-<body>
+<body>  
 	<header id="header"><!--header-->
 		<div class="header_top"><!--header_top-->
 			<div class="container">
@@ -123,7 +124,7 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
-						<form action="#">
+						<form method="post" action="login.php">
 							<input type="text" placeholder="Name" />
 							<input type="email" placeholder="Email Address" />
 							<span>
@@ -138,22 +139,25 @@
 					<h2 class="or">OR</h2>
 				</div>
 				<div class="col-sm-4 col-sm-offset-1">
-					<div class="login-form"><!--sign up form-->
+                    
+					<div class="login-form" ><!--sign up form-->
 						<h2>Register a new account</h2>
-						<form action="#">
-							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
-                            				<input type="password" placeholder="Password" />
+                        <!-- display validation erros here -->
+                        <?php include('errors.php'); ?>
+						<form method="post" action='login.php'>
+                            
+							<input type="text" name ="username" placeholder="Name" />
+							<input type="email" name="email" placeholder="Email Address" />
+                            <input type="password" name="password" placeholder="Password" />
 							<span>
 								<input type="checkbox" class="checkbox">Subscribe to newsletter
 							</span>
-							<button type="submit" class="btn btn-default">Register</button>
+							<button type="submit" class="btn btn-default" name="register">Register</button>
 						</form>
 					</div>
 				</div><!--/sign up form-->
 				</div>
 			</div>
-		</div>
 	</section><!--/form-->
 	
 	
