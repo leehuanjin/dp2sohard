@@ -58,7 +58,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
 						</div>
 						
 					</div>
@@ -87,11 +87,11 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
-							</button>
+							</button>    
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html" class="active">Home</a></li>
+								<li><a href="index.php" class="active">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
@@ -126,7 +126,7 @@
 						<h2>Login to your account</h2>
 						<form method="post" action="login.php">
 							<input type="text" placeholder="Name" />
-							<input type="email" placeholder="Email Address" />
+							<input type="password" placeholder="Password" />
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
@@ -146,8 +146,8 @@
                         <?php include('errors.php'); ?>
 						<form method="post" action='login.php'>
                             
-							<input type="text" name ="username" placeholder="Name" />
-							<input type="email" name="email" placeholder="Email Address" />
+							<input type="text" name ="username" placeholder="Name" value="<?php echo $username; ?>"   />
+							<input type="email" name="email" placeholder="Email Address" value="<?php echo $email; ?>"   />
                             <input type="password" name="password" placeholder="Password" />
 							<span>
 								<input type="checkbox" class="checkbox">Subscribe to newsletter
