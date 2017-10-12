@@ -124,14 +124,16 @@
 				<div class="col-sm-4 col-sm-offset-1">
 					<div class="login-form"><!--login form-->
 						<h2>Login to your account</h2>
+                        <!-- display validation erros here -->
+                        <?php include('errors.php'); ?>   
 						<form method="post" action="login.php">
-							<input type="text" placeholder="Name" />
-							<input type="password" placeholder="Password" />
+							<input type="text" placeholder="Name" name="username1"/>
+							<input type="password" placeholder="Password" name ="password2"/>
 							<span>
 								<input type="checkbox" class="checkbox"> 
 								Keep me signed in
 							</span>
-							<button type="submit" class="btn btn-default">Login</button>
+							<button type="submit" class="btn btn-default" name="login_user">Login</button>
 						</form>
 					</div><!--/login form-->
 				</div>
