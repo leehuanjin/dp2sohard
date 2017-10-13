@@ -91,7 +91,22 @@
 								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                        <!-- Seller's business to collect the payments. -->
+										<input type="hidden" name="business" value="seller@deallocraft.com">
+
+										<!-- Specify a PayPal Shopping Cart View Cart button. -->
+										<input type="hidden" name="cmd" value="_cart">
+										
+										<!-- Continue shopping on the current webpage of the merchant site. -->
+										<!-- The below value is replaced when buyers click View Cart -->
+										<input type="hidden" name="shopping_url" value="">
+										
+										<!--display the view cart button-->
+										<input type="image" onclick=getContinueShoppingURL(this.form) src="https://www.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="">
+										<img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+										<input type="hidden" name="display" value="1">
+									</form>
 								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
@@ -322,7 +337,7 @@
 											<!-- The below value is replaced when buyers click Add to Cart -->
 											<input type="hidden" name="shopping_url" value="">
 
-											<!-- Display the payment button -->
+											<!-- Display the add to cart button -->
 											<input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
 											<img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
 										</form>									
