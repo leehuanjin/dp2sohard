@@ -178,19 +178,58 @@
                     <form action="/upload-target" class="dropzone"></form>
                 </div>
             </div>
+            <br/>
+            <div class="row">
+                <div class="col-sm-3">
+                    <form action="/upload-target" class="dropzone"></form>
+                </div>
+                <div class="col-sm-3">
+                    <form action="/upload-target" class="dropzone"></form>
+                </div>
+                <div class="col-sm-3">
+                    <form action="/upload-target" class="dropzone"></form>
+                </div>
+                <div class="col-sm-3">
+                    <form action="/upload-target" class="dropzone"></form>
+                </div>
+            </div>
             
             <hr>
             
             <div class="row">
                 <div class="col-sm-9">
                     <h2>Ad Details</h2> 
-                        <div id="product_contents">
-                            <label>Ad title:</label>
+                    <div id="product_title" class="form-group row">
+                        <label class="control-label col-sm-3 hidden-xs">Ad title:</label>
+                        <div class="control-group col-xs-12 col-sm-9">
+                            <input class="form-control" placeholder="Ad Title" id="title" name="title" maxlength="50" value="" type="text"/>
                         </div>
+                    </div>
+                    <div id="product_desc" class="form-group row">
+                        <label class="control-label col-sm-3 hidden-xs">Ad Description:</label>
+                        <div class="control-group col-xs-12 col-sm-9">
+                            <textarea class="form-control" placeholder="Ad Description" id="desc" name="desc" maxlength="8100" cols="43" rows="10" value="" type="text"></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-                                   
+                
+            <hr>
+                
+            <div class="row">
+                <div class="col-sm-9">
+                    <h2>My Details</h2> 
+                    <div id="name_label_row" class="form-group row"> 
+                        <label class="control-label col-sm-3 hidden-xs">Full name (as per NRIC/Passport)</label> 
+                        <div class="control-group col-xs-12 col-sm-9">  
+                            <input class="form-control" placeholder="Full name (as per NRIC/Passport)" id="name" name="name" maxlength="50" value="" type="text"/> 
+                           
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+        </div>                      
     </section>
     
     <footer id="footer"><!--Footer-->
