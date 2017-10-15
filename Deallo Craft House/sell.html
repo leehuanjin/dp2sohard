@@ -61,35 +61,11 @@
 						<div class="logo pull-left">
 							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
 						</div>
-						<div class="btn-group pull-right">
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									Country
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="">Canada</a></li>
-									<li><a href="">UK</a></li>
-                                    <li><a href="">Malaysia</a></li>
-								</ul>
-							</div>
-							
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									Currency
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="">Canadian Dollar</a></li>
-									<li><a href="">Pound</a></li>
-                                    <li><a href="">Ringgit</a></li>
-								</ul>
-							</div>
-						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
+								<li><a href="sell.html" class="active"><i class="fa fa-money"></i> SELL On Deallo</a></li>
 								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
@@ -117,9 +93,9 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.html">Home</a></li>
-								<li class="dropdown"><a href="#" class="active">Shop<i class="fa fa-angle-down"></i></a>
+								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html" class="active">Products</a></li>
+                                        <li><a href="shop.html">Products</a></li>
 										<li><a href="checkout.html">Checkout</a></li> 
 										<li><a href="cart.html">Cart</a></li> 
                                     </ul>
@@ -145,6 +121,7 @@
 	</header><!--Header-->
     
     <section id="upload_page">
+        <form method="post" action='sell.html'>
         <div class="container">
             <div class="row">
                 <div clss="col-sm-9">
@@ -211,6 +188,11 @@
                             <textarea class="form-control" placeholder="Ad Description" id="desc" name="desc" maxlength="8100" cols="43" rows="10" value="" type="text"></textarea>
                         </div>
                     </div>
+                    <span class="help-block"> 
+                                                <div tabindex="-1" id="err_company_ad" style="display: none">
+	                                               <div class="warning nohistory"></div>
+                                                </div>
+                                            </span>
                 </div>
             </div>
                 
@@ -225,11 +207,95 @@
                             <input class="form-control" placeholder="Full name (as per NRIC/Passport)" id="name" name="name" maxlength="50" value="" type="text"/> 
                            
                         </div>
+                        <div class="col-xs-12"> 
+                            <span class="help-block"> 
+                                <div tabindex="-1" id="err_company_ad" style="display: none">
+	                               <div class="warning nohistory"></div>
+                                </div>
+                            </span>
+                        </div>
                     </div>
+                    
+                    <div id="seller_lvl" class="form-group row" style="display:visible;">
+                        <label class="control-label col-xs-12 col-sm-3" style="padding-top: 9px;">I am a</label> 
+                        <div class="control-group col-xs-12 col-sm-9"> 
+                            <div class="row"> 
+                                <div>    
+                                    <div id="seller_lvl"> 
+                                        <div class="col-xs-12" id="p_ad_h" > 
+                                            <div class="checkbox" style="padding-left: 0px;"> 
+                                                <label> 
+                                                    <input id="private_ad" name="company_ad" value="0" checked="checked" type="radio" /> 
+                                                    <label style="display: inline; font-weight: normal;" id="private_ad_label" for="private_ad">Private Seller</label> 
+                                                </label> 
+                                            </div> 
+                                        </div> 
+                                        <div class="clearfix"></div> 
+                                        <div class="col-xs-12" id="pro_ad_h" > 
+                                            <div class="checkbox" style="padding-left: 0px;"> 
+                                                <input id="pro_ad" name="company_ad" value="1"  type="radio" />
+                                                <label style="display: inline; font-weight: normal;" id="pro_ad_label" for="pro_ad">Professional Seller
+                                                </label> 
+                                            </div>
+                                        </div> 
+                                        <div class="clearfix"></div>
+                                        <div class="col-xs-12" id="c_ad_h" > 
+                                            <div class="checkbox" style="padding-left: 0px;"> 
+                                                <input id="comp_ad" name="company_ad" value="1"  type="radio" />
+                                                <label style="display: inline; font-weight: normal;" id="comp_ad_label" for="comp_ad">Company
+                                                </label> </div> 
+                                        </div> <div class="clearfix"></div> 
+                                        <div class="col-xs-12"> 
+                                            <span class="help-block"> 
+                                                <div tabindex="-1" id="err_company_ad" style="display: none">
+	                                               <div class="warning nohistory"></div>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </div> 
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="product_title" class="form-group row">
+                        <label class="control-label col-sm-3 hidden-xs">Email Address:</label>
+                        <div class="control-group col-xs-12 col-sm-9">
+                            <input class="form-control" placeholder="Email Address" id="email" name="email" maxlength="50" value="" type="email"/>
+                        </div>
+                        <div class="col-xs-12"> 
+                            <span class="help-block"> 
+                                <div tabindex="-1" id="err_company_ad" style="display: none">
+	                               <div class="warning nohistory"></div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div id="product_title" class="form-group row">
+                        <label class="control-label col-sm-3 hidden-xs">Phone Number:</label>
+                        <div class="control-group col-xs-12 col-sm-9">
+                            <input class="form-control" placeholder="Phone Number" id="phone" name="phone" maxlength="11" value="" type="tel">
+                        </div>
+                        <div class="col-xs-12"> 
+                            <span class="help-block"> 
+                                <div tabindex="-1" id="err_company_ad" style="display: none">
+	                               <div class="warning nohistory"></div>
+                                </div>
+                            </span>
+                        </div>
+                    </div>
+                    
                 </div>
-                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-default" name="register">Register</button>
                 
-        </div>                      
+        </div>
+            
+        </form>
     </section>
     
     <footer id="footer"><!--Footer-->
