@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Shop | E-Shopper</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/price-range.css" rel="stylesheet">
-    <link href="css/animate.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="css/responsive.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
-    <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
-    <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
-</head><!--/head-->
+
+        <title>bootstrap-imageupload</title>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Shop | E-Shopper</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.min.css" rel="stylesheet">
+        <link href="css/prettyPhoto.css" rel="stylesheet">
+        <link href="css/price-range.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <link href="css/responsive.css" rel="stylesheet">
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->       
+        <link rel="shortcut icon" href="images/ico/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="css/bootstrap-imageupload.css" rel="stylesheet">
+
+<style>
+   .imageupload {
+        margin: 20px 0;
+    }
+</style>
+
+</head> <!--header-->
 
 <body>
-	<header id="header"><!--header-->
+    <header id="header"><!--header-->
 		<div class="header_top"><!--header_top-->
 			<div class="container">
 				<div class="row">
@@ -92,7 +102,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="shop.html">Products</a></li>
@@ -124,7 +134,7 @@
         <form method="post" action='sell.html'>
         <div class="container">
             <div class="row">
-                <div clss="col-sm-9">
+                <div class="col-sm-9">
                     <h2>Category</h2>
                     <select class="form-control" name="category_group" id="category_group" sel_id="">
                         <option value="0" selected="selected">Select your category</option>
@@ -141,33 +151,171 @@
             <hr>
             
             <div class="row">
-                <h2>Photos</h2>
-                <div class="col-sm-3">
-                    <form action="/upload-target" class="dropzone"></form>
+            <h2>Photos</h2>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="imageupload panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title pull-left">Image (1)</h3>
+                            </div>
+                            <div class="file-tab panel-body">
+                                <label class="btn btn-default btn-file">
+                                    <span>Browse</span>
+                                    <!-- The file is stored here. -->
+                                    <input type="file" name="image-file">
+                                </label>
+                                <button type="button" class="btn btn-default">Remove</button>
+                            </div>
+                            <div class="url-tab panel-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default">Remove</button>
+                                <!-- The URL is stored here. -->
+                                <input type="hidden" name="image-url">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <div class="imageupload panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title pull-left">Image (2)</h3>
+                            </div>
+                            <div class="file-tab panel-body">
+                                <label class="btn btn-default btn-file">
+                                    <span>Browse</span>
+                                    <!-- The file is stored here. -->
+                                    <input type="file" name="image-file">
+                                </label>
+                                <button type="button" class="btn btn-default">Remove</button>
+                            </div>
+                            <div class="url-tab panel-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default">Remove</button>
+                                <!-- The URL is stored here. -->
+                                <input type="hidden" name="image-url">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <div class="imageupload panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title pull-left">Image (3)</h3>
+                            </div>
+                            <div class="file-tab panel-body">
+                                <label class="btn btn-default btn-file">
+                                    <span>Browse</span>
+                                    <!-- The file is stored here. -->
+                                    <input type="file" name="image-file">
+                                </label>
+                                <button type="button" class="btn btn-default">Remove</button>
+                            </div>
+                            <div class="url-tab panel-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default">Remove</button>
+                                <!-- The URL is stored here. -->
+                                <input type="hidden" name="image-url">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <form action="/upload-target" class="dropzone"></form>
-                </div>
-                <div class="col-sm-3">
-                    <form action="/upload-target" class="dropzone"></form>
-                </div>
-                <div class="col-sm-3">
-                    <form action="/upload-target" class="dropzone"></form>
-                </div>
-            </div>
-            <br/>
-            <div class="row">
-                <div class="col-sm-3">
-                    <form action="/upload-target" class="dropzone"></form>
-                </div>
-                <div class="col-sm-3">
-                    <form action="/upload-target" class="dropzone"></form>
-                </div>
-                <div class="col-sm-3">
-                    <form action="/upload-target" class="dropzone"></form>
-                </div>
-                <div class="col-sm-3">
-                    <form action="/upload-target" class="dropzone"></form>
+                
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="imageupload panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title pull-left">Image (4)</h3>
+                            </div>
+                            <div class="file-tab panel-body">
+                                <label class="btn btn-default btn-file">
+                                    <span>Browse</span>
+                                    <!-- The file is stored here. -->
+                                    <input type="file" name="image-file">
+                                </label>
+                                <button type="button" class="btn btn-default">Remove</button>
+                            </div>
+                            <div class="url-tab panel-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default">Remove</button>
+                                <!-- The URL is stored here. -->
+                                <input type="hidden" name="image-url">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <div class="imageupload panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title pull-left">Image (5)</h3>
+                            </div>
+                            <div class="file-tab panel-body">
+                                <label class="btn btn-default btn-file">
+                                    <span>Browse</span>
+                                    <!-- The file is stored here. -->
+                                    <input type="file" name="image-file">
+                                </label>
+                                <button type="button" class="btn btn-default">Remove</button>
+                            </div>
+                            <div class="url-tab panel-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default">Remove</button>
+                                <!-- The URL is stored here. -->
+                                <input type="hidden" name="image-url">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        <div class="imageupload panel panel-default">
+                            <div class="panel-heading clearfix">
+                                <h3 class="panel-title pull-left">Image (6)</h3>
+                            </div>
+                            <div class="file-tab panel-body">
+                                <label class="btn btn-default btn-file">
+                                    <span>Browse</span>
+                                    <!-- The file is stored here. -->
+                                    <input type="file" name="image-file">
+                                </label>
+                                <button type="button" class="btn btn-default">Remove</button>
+                            </div>
+                            <div class="url-tab panel-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
+                                    <div class="input-group-btn">
+                                        <button type="button" class="btn btn-default">Submit</button>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default">Remove</button>
+                                <!-- The URL is stored here. -->
+                                <input type="hidden" name="image-url">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -388,14 +536,37 @@
 		</div>
 		
 	</footer><!--/Footer-->
-	
-    
-  
-    <script src="js/jquery.js"></script>
-	<script src="js/price-range.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
-</body>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/price-range.js"></script>
+        <script src="js/jquery.scrollUp.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.prettyPhoto.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="js/bootstrap-imageupload.js"></script>
+
+        <script>
+            var $imageupload = $('.imageupload');
+            $imageupload.imageupload();
+
+            $('#imageupload-disable').on('click', function() {
+                $imageupload.imageupload('disable');
+                $(this).blur();
+            })
+
+            $('#imageupload-enable').on('click', function() {
+                $imageupload.imageupload('enable');
+                $(this).blur();
+            })
+
+            $('#imageupload-reset').on('click', function() {
+                $imageupload.imageupload('reset');
+                $(this).blur();
+            });
+        </script>
+
+    </body>
+
 </html>
