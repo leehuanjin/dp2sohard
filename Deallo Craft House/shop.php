@@ -1,7 +1,6 @@
 <?php include('server.php'); ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -341,27 +340,32 @@
 
 
 
-
-
-
-
                             <?php
-
+                            
                             while ($row = mysqli_fetch_array($result)) {
-
-                                echo "<div class='col-sm-4'>";
+                                
+                                echo "<form enctype='multipart/form-data' method='post' action=''>";
+                                echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
+                                
                                 echo "<div class='product-image-wrapper'>";
+                              
                                 echo "<div class='single-products'>";
+                                
                                 echo "<div class='productinfo text-center'>";
-
+                                
                                 echo "<div id='img_div'>";
                                 echo "<img height='250' src='images/".$row['image']."' >";
                                 echo " <h2>$56</h2>";
                                 echo "<p>".$row['image_text']."</p>";
-                                echo "</div>";   
+                                echo "</div>";  
+                               
+                                $_SESSION['Fid'] = $row['id'];
+                                
                                 echo "<div class='choose'>";
                                 echo  "<ul class='nav nav-pills nav-justified'>";
-                                echo  "<li><a href=''><i class='fa fa-plus-square'></i>Add to wishlist</a></li>";
+                               
+                                echo  "<input type='submit' name='delete' id='delete' value='delete'>";
+                              
                                 echo  "<li><a href=''><i class='fa fa-plus-square'></i>Add to compare</a></li>";
                                 echo  "</ul>";
                                 echo  "</div>";
@@ -369,6 +373,7 @@
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</div>";
+                                echo "</form>";
 
                             }
                             ?>  
