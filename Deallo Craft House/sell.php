@@ -1,3 +1,4 @@
+<?php include('server.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,17 +70,17 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="sell.html" class="active"><i class="fa fa-money"></i> SELL On Deallo</a></li>
+								<li><a href="sell.php" class="active"><i class="fa fa-money"></i> SELL On Deallo</a></li>
 								<li><a href=""><i class="fa fa-user"></i> Account</a></li>
 								<li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 								<li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
 							</ul>
 						</div>
@@ -105,7 +106,7 @@
 								<li><a href="index.php">Home</a></li>
 								<li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
-                                        <li><a href="shop.html">Products</a></li>
+                                        <li><a href="shop.php">Products</a></li>
 										<li><a href="checkout.html">Checkout</a></li> 
 										<li><a href="cart.html">Cart</a></li> 
                                     </ul>
@@ -131,7 +132,7 @@
 	</header><!--Header-->
     
     <section id="upload_page">
-        <form method="post" action='sell.html'>
+        <form method="post" action='shop.php' enctype="multipart/form-data">
         <div class="container">
             <div class="row">
                 <div class="col-sm-9">
@@ -162,160 +163,14 @@
                                 <label class="btn btn-default btn-file">
                                     <span>Browse</span>
                                     <!-- The file is stored here. -->
-                                    <input type="file" name="image-file">
+                                    <input type="file" name="image">
                                 </label>
                                 <button type="button" class="btn btn-default">Remove</button>
                             </div>
-                            <div class="url-tab panel-body">
-                                <div class="input-group">
-                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default">Submit</button>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-default">Remove</button>
-                                <!-- The URL is stored here. -->
-                                <input type="hidden" name="image-url">
-                            </div>
+                     
                         </div>
                     </div>
-                    
-                    <div class="col-sm-3">
-                        <div class="imageupload panel panel-default">
-                            <div class="panel-heading clearfix">
-                                <h3 class="panel-title pull-left">Image (2)</h3>
-                            </div>
-                            <div class="file-tab panel-body">
-                                <label class="btn btn-default btn-file">
-                                    <span>Browse</span>
-                                    <!-- The file is stored here. -->
-                                    <input type="file" name="image-file">
-                                </label>
-                                <button type="button" class="btn btn-default">Remove</button>
-                            </div>
-                            <div class="url-tab panel-body">
-                                <div class="input-group">
-                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default">Submit</button>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-default">Remove</button>
-                                <!-- The URL is stored here. -->
-                                <input type="hidden" name="image-url">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-3">
-                        <div class="imageupload panel panel-default">
-                            <div class="panel-heading clearfix">
-                                <h3 class="panel-title pull-left">Image (3)</h3>
-                            </div>
-                            <div class="file-tab panel-body">
-                                <label class="btn btn-default btn-file">
-                                    <span>Browse</span>
-                                    <!-- The file is stored here. -->
-                                    <input type="file" name="image-file">
-                                </label>
-                                <button type="button" class="btn btn-default">Remove</button>
-                            </div>
-                            <div class="url-tab panel-body">
-                                <div class="input-group">
-                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default">Submit</button>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-default">Remove</button>
-                                <!-- The URL is stored here. -->
-                                <input type="hidden" name="image-url">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="imageupload panel panel-default">
-                            <div class="panel-heading clearfix">
-                                <h3 class="panel-title pull-left">Image (4)</h3>
-                            </div>
-                            <div class="file-tab panel-body">
-                                <label class="btn btn-default btn-file">
-                                    <span>Browse</span>
-                                    <!-- The file is stored here. -->
-                                    <input type="file" name="image-file">
-                                </label>
-                                <button type="button" class="btn btn-default">Remove</button>
-                            </div>
-                            <div class="url-tab panel-body">
-                                <div class="input-group">
-                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default">Submit</button>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-default">Remove</button>
-                                <!-- The URL is stored here. -->
-                                <input type="hidden" name="image-url">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-3">
-                        <div class="imageupload panel panel-default">
-                            <div class="panel-heading clearfix">
-                                <h3 class="panel-title pull-left">Image (5)</h3>
-                            </div>
-                            <div class="file-tab panel-body">
-                                <label class="btn btn-default btn-file">
-                                    <span>Browse</span>
-                                    <!-- The file is stored here. -->
-                                    <input type="file" name="image-file">
-                                </label>
-                                <button type="button" class="btn btn-default">Remove</button>
-                            </div>
-                            <div class="url-tab panel-body">
-                                <div class="input-group">
-                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default">Submit</button>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-default">Remove</button>
-                                <!-- The URL is stored here. -->
-                                <input type="hidden" name="image-url">
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-3">
-                        <div class="imageupload panel panel-default">
-                            <div class="panel-heading clearfix">
-                                <h3 class="panel-title pull-left">Image (6)</h3>
-                            </div>
-                            <div class="file-tab panel-body">
-                                <label class="btn btn-default btn-file">
-                                    <span>Browse</span>
-                                    <!-- The file is stored here. -->
-                                    <input type="file" name="image-file">
-                                </label>
-                                <button type="button" class="btn btn-default">Remove</button>
-                            </div>
-                            <div class="url-tab panel-body">
-                                <div class="input-group">
-                                    <input type="text" class="form-control hasclear" placeholder="Image URL">
-                                    <div class="input-group-btn">
-                                        <button type="button" class="btn btn-default">Submit</button>
-                                    </div>
-                                </div>
-                                <button type="button" class="btn btn-default">Remove</button>
-                                <!-- The URL is stored here. -->
-                                <input type="hidden" name="image-url">
-                            </div>
-                        </div>
-                    </div>
+                 
                 </div>
             </div>
             
@@ -326,8 +181,10 @@
                     <h2>Ad Details</h2> 
                     <div id="product_title" class="form-group row">
                         <label class="control-label col-sm-3 hidden-xs">Ad title:</label>
+                        
+                        
                         <div class="control-group col-xs-12 col-sm-9">
-                            <input class="form-control" placeholder="Ad Title" id="title" name="title" maxlength="50" value="" type="text"/>
+                            <input class="form-control" placeholder="Ad Title" id="title" name="image_text" maxlength="50" value="" type="text"/>
                         </div>
                     </div>
                     <div id="product_desc" class="form-group row">
@@ -439,7 +296,7 @@
                 </div>
             </div>
             
-            <button type="submit" class="btn btn-default" name="register">Register</button>
+            <input type="submit"  name="upload" value="Upload">
                 
         </div>
             
