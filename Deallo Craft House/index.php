@@ -65,15 +65,19 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
-                                
+
                                     <?php  if (isset($_SESSION['username'])) : ?>
-                                    <li><a href="sell.html"><i class="fa fa-money"></i> SELL On Deallo</a></li>
+                                    <li><a href="sell.php"><i class="fa fa-money"></i> SELL On Deallo</a></li>
                                     <?php endif ?>
                                     <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                    <li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+                                    <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                    <?php 
+                                    if (isset($_SESSION['username'])) : ?>
+                                    echo <li><a href="login.php"><i class="fa fa-lock"></i> Logout</a></li>
+                                    <?php endif ?>
+
                                 </ul>
                             </div>
                         </div>
@@ -119,9 +123,9 @@
                                     <li><a href="index.php" class="active">Home</a></li>
                                     <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="shop.html">Products</a></li>
+                                            <li><a href="shop.php">Products</a></li>
                                             <li><a href="checkout.html">Checkout</a></li> 
-                                            <li><a href="cart.html">Cart</a></li> 
+                                            <li><a href="cart.php">Cart</a></li> 
                                         </ul>
                                     </li> 
                                     <li class="dropdown"><a href="#">Blog<i class="fa fa-angle-down"></i></a>
