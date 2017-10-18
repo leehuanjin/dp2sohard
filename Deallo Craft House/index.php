@@ -75,7 +75,7 @@
                                     <li><a href="cart.php"><i class="fa fa-shopping-cart"></i> Cart</a></li>
                                     <?php 
                                     if (isset($_SESSION['username'])) : ?>
-                                    echo <li><a href="login.php"><i class="fa fa-lock"></i> Logout</a></li>
+                                    <li><a href="login.php"><i class="fa fa-lock"></i> Logout</a></li>
                                     <?php endif ?>
 
                                 </ul>
