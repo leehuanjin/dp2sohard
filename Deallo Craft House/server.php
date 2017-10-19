@@ -8,7 +8,7 @@ $errors = array();
 
 
 //connect to the database
-$db = mysqli_connect("localhost","root",'',"registration");
+$db = mysqli_connect("localhost","root",'',"deallo_db");
 
 //if the register button is clicked
 if(isset($_POST['register'])){
@@ -109,18 +109,18 @@ if (isset($_POST['upload'])) {
 
 $result = mysqli_query($db, "SELECT * FROM images");
 
-//delete
+//product delete
 if(isset($_POST['delete'])){
 
 
    $id =  $_SESSION['Fid'];
     
     
-    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image FROM images WHERE id='$id'")); //Fetch the file which is associated with this account
+    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM images WHERE id='$id'")); //Fetch the file which is associated with this account
 
 
 
-    unlink("images/".$select['image']); //Deleting the file
+    unlink("images/".$select['image_text']); //Deleting the file
 
     $query=mysqli_query($db,"DELETE FROM images WHERE id='$id'");
     if($query){
@@ -129,11 +129,20 @@ if(isset($_POST['delete'])){
     }else{
         echo "Unable to proccess your request";
     }
-    $_SESSION['msg']="Your Account Has  Been Deleted";
-    unset($_SESSION['usersession']);
-
-    echo "Unable to proccess your request";
+  
 }
+
+
+//product edit
+if(isset($_POST['edit'])){
+ 
+    
+    
+}
+
+
+
+
 
 
 
