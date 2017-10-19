@@ -66,7 +66,11 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
+                                    <?php  if (isset($_SESSION['username'])) : ?>
                                     <li><a href="sell.php"><i class="fa fa-money"></i> SELL On Deallo</a></li>
+                                    <?php endif ?>
+                                    
+                                    
                                     <li><a href=""><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
@@ -86,7 +90,18 @@
                                         <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         <input type="hidden" name="display" value="1">
                                         </form>
-                                    <li><a href="login.php"><i class="fa fa-lock"></i> Login</a></li>
+                                         <?php 
+                                        if (!isset($_SESSION['username'])){
+                                        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
+                                        }
+                                        else 
+                                        {
+                                            echo "<li><a href='login.php'><i class='fa fa-lock'></i> Logout</a></li>";
+                                        }
+
+                                        ?>
+                                    
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -364,9 +379,12 @@
                                 echo "<div class='choose'>";
                                 echo  "<ul class='nav nav-pills nav-justified'>";
                                
-                                echo  "<input type='submit' name='delete' id='delete' value='delete'>";
-                              
-                                echo  "<li><a href=''><i class='fa fa-plus-square'></i>Add to compare</a></li>";
+                                echo  "<input type='submit' name='edit' id='edit' value='edit'>";
+                                echo  "<input type='submit' name='delete' id='delete'  value='delete'>";
+                                
+                                
+                                
+                               
                                 echo  "</ul>";
                                 echo  "</div>";
                                 echo "</div>";
