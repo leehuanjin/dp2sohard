@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
@@ -69,8 +70,8 @@
                                     <?php  if (isset($_SESSION['username'])) : ?>
                                     <li><a href="sell.php"><i class="fa fa-money"></i> SELL On Deallo</a></li>
                                     <?php endif ?>
-                                    
-                                    
+
+
                                     <li><a href=""><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
@@ -90,18 +91,18 @@
                                         <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         <input type="hidden" name="display" value="1">
                                         </form>
-                                         <?php 
-                                        if (!isset($_SESSION['username'])){
-                                        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
-                                        }
-                                        else 
-                                        {
-                                            echo "<li><a href='login.php'><i class='fa fa-lock'></i> Logout</a></li>";
-                                        }
+                                        <?php 
+    if (!isset($_SESSION['username'])){
+        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
+    }
+                                    else 
+                                    {
+                                        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Logout</a></li>";
+                                    }
 
                                         ?>
-                                    
-                                    
+
+
                                 </ul>
                             </div>
                         </div>
@@ -353,38 +354,33 @@
 
 
 
-
-
                             <?php
-                            
+
                             while ($row = mysqli_fetch_array($result)) {
-                                
+
                                 echo "<form enctype='multipart/form-data' method='post' action=''>";
                                 echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
-                                
+
                                 echo "<div class='product-image-wrapper'>";
-                              
+
                                 echo "<div class='single-products'>";
-                                
+
                                 echo "<div class='productinfo text-center'>";
-                                
+
                                 echo "<div id='img_div'>";
                                 echo "<img height='250' src='images/".$row['image']."' >";
                                 echo " <h2>$56</h2>";
                                 echo "<p>".$row['image_text']."</p>";
                                 echo "</div>";  
-                               
+
                                 $_SESSION['Fid'] = $row['id'];
-                                
+
                                 echo "<div class='choose'>";
                                 echo  "<ul class='nav nav-pills nav-justified'>";
-                               
-                                echo  "<input type='submit' name='edit' id='edit' value='edit'>";
+
+                                echo  "<input type='submit' name='edit' id='edit' value='edit' data-toggle='modal' data-target='#imageModal'>";
                                 echo  "<input type='submit' name='delete' id='delete'  value='delete'>";
-                                
-                                
-                                
-                               
+
                                 echo  "</ul>";
                                 echo  "</div>";
                                 echo "</div>";
@@ -392,9 +388,34 @@
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</form>";
-
                             }
-                            ?>  
+                            ?> 
+
+                            <div id="imageModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Image</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="image_form" method="post" enctype="multipart/form-data">
+                                                <p><label>Select Image</label>
+                                                <input type="file" name="image" id="image" /></p><br />
+                                                <input type="hidden" name="action" id="action" value="insert" />
+                                                <input type="hidden" name="image_id" id="image_id" />
+                                                <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+
 
 
                         </div><!--features_items-->
