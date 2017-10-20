@@ -123,7 +123,6 @@ if(isset($_POST['delete'])){
     unlink("images/".$select['image_text']); //Deleting the file
 
     $query=mysqli_query($db,"DELETE FROM images WHERE id='$id'");
-    $query=mysqli_query($db,"INSERT INTO images WHERE id='$id'");
     if($query){
         header("Location: shop.php");
 
@@ -167,14 +166,8 @@ if(isset($_POST['insert'])){
     }else{
         echo "Unable to proccess your request";
     }
-    
-    
-    
-    
-    
+ 
 }
-
-
 
 
 

@@ -4,7 +4,6 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
@@ -351,6 +350,29 @@
                                 </div>
                             </div>
 
+                            <div id="imageModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Image</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="image_form" method="post" enctype="multipart/form-data">
+                                                <p><label>Select Image</label>
+                                                    <input type="file" name="image" id="image" /></p><br />
+                                                <input type="hidden" name="action" id="action" value="insert" />
+                                                <input type="hidden" name="image_id" id="image_id" />
+                                                <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
@@ -388,34 +410,9 @@
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</form>";
+
                             }
-                            ?> 
-
-                            <div id="imageModal" class="modal fade" role="dialog">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Add Image</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form id="image_form" method="post" enctype="multipart/form-data">
-                                                <p><label>Select Image</label>
-                                                <input type="file" name="image" id="image" /></p><br />
-                                                <input type="hidden" name="action" id="action" value="insert" />
-                                                <input type="hidden" name="image_id" id="image_id" />
-                                                <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />
-
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          
-
+                            ?>  
 
 
                         </div><!--features_items-->
