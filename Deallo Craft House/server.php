@@ -123,6 +123,7 @@ if(isset($_POST['delete'])){
     unlink("images/".$select['image_text']); //Deleting the file
 
     $query=mysqli_query($db,"DELETE FROM images WHERE id='$id'");
+    $query=mysqli_query($db,"INSERT INTO images WHERE id='$id'");
     if($query){
         header("Location: shop.php");
 
@@ -134,8 +135,41 @@ if(isset($_POST['delete'])){
 
 
 //product edit
-if(isset($_POST['edit'])){
- 
+if(isset($_POST['insert'])){
+    
+   $id =  $_SESSION['Fid'];
+    
+    
+    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM images WHERE id='$id'")); //Fetch the file which is associated with this account
+    $temp = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM images WHERE id='$id'"));
+
+
+    unlink("images/".$select['image_text']); //Deleting the file
+
+    $query=mysqli_query($db,"DELETE FROM images WHERE id='$id'");
+    
+    
+    
+    $target = "images/".basename($_FILES['image']['name']);
+
+
+    $image = $_FILES['image']['name'];
+   
+
+    $sql = "INSERT INTO images (image) VALUES ('$image')";
+    mysqli_query($db, $sql);
+    
+    
+    
+    if($query){
+        header("Location: shop.php");
+
+    }else{
+        echo "Unable to proccess your request";
+    }
+    
+    
+    
     
     
 }
