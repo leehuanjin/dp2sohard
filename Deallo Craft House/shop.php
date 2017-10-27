@@ -124,7 +124,7 @@
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
                                     <li><a href="index.php">Home</a></li>
-                                    <li class="dropdown"><a href="#" class="active">Shop<i class="fa fa-angle-down"></i></a>
+                                    <li class="dropdown"><a href="shop.php" class="active">Shop<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="shop.php" class="active">Products</a></li>
                                             <li><a href="checkout.html">Checkout</a></li> 
@@ -167,22 +167,11 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                            <a href="sportswear.php">
                                                 <span class="badge pull-right"><i class="fa fa-plus"></i></span>
                                                 Sportswear
                                             </a>
                                         </h4>
-                                    </div>
-                                    <div id="sportswear" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            <ul>
-                                                <li><a href="">Nike </a></li>
-                                                <li><a href="">Under Armour </a></li>
-                                                <li><a href="">Adidas </a></li>
-                                                <li><a href="">Puma</a></li>
-                                                <li><a href="">ASICS </a></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="panel panel-default">
