@@ -1,4 +1,4 @@
-<?php include('serveracc.php'); ?>
+<?php include('server.php'); ?>
 
 
 <!DOCTYPE html>
