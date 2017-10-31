@@ -396,7 +396,7 @@
 
 
                          
-
+                             
                                 
                                 echo "<div>";
                                 echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
@@ -420,7 +420,7 @@
                                     echo "<input type='image' name='submit' onclick=getContinueShoppingURL(this.form) 
                                     src='https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png' alt='Add to Cart'>";
                                         
-                                        
+        
                                         
                                     echo "<img alt='' width='1' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' >";
 
@@ -431,14 +431,7 @@
 
                                 $_SESSION['Fid'] = $row['product_id'];
 
-                                echo "<div class='choose'>";
-                                echo  "<ul class='nav nav-pills nav-justified'>";
-
-                                echo  "<input type='submit' name='edit' id='edit' value='edit' data-toggle='modal' data-target='#imageModal'>";
-                                echo  "<input type='submit' name='delete' id='delete'  value='delete'>";
-
-                                echo  "</ul>";
-                                echo  "</div>";
+                    
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</div>";
