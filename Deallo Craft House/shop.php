@@ -371,12 +371,10 @@
                             </div>
 
 
-
                             <?php
 
                             while ($row = mysqli_fetch_array($result)) {
-                                
-                               
+                                                              
                                 echo "<form enctype='multipart/form-data' method='post' action='https://www.paypal.com/cgi-bin/webscr'>";
                                 echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
 
@@ -388,14 +386,10 @@
 
                                 echo "<div id='img_div'>";
                                 echo "<img height='250' src='images/".$row['image']."' >";
-                                echo " <h2>$56</h2>";
-                                echo "<p>".$row['image_text']."</p>";
+                                echo "<h2>$".$row['price']."</h2>";
+                                echo "<h3>".$row['image_text']."</h3>";
+                                
                                 echo "</div>";
-
-
-
-
-                         
 
                                 
                                 echo "<div>";
