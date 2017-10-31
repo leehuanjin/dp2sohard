@@ -113,64 +113,64 @@ if (isset($_POST['upload'])) {
 $result = mysqli_query($db, "SELECT * FROM products");
 
 //product delete
-if(isset($_POST['delete'])){
+//if(isset($_POST['delete'])){
 
 
-   $id =  $_SESSION['Fid'];
+//   $id =  $_SESSION['Fid'];
     
     
-    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'")); //Fetch the file which is associated with this account
+//    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'")); //Fetch the file which is associated with this account
 
 
 
-    unlink("images/".$select['image_text']); //Deleting the file
+//    unlink("images/".$select['image_text']); //Deleting the file
 
-    $query=mysqli_query($db,"DELETE FROM products WHERE product_id='$id'");
-    if($query){
-        header("Location: shop.php");
+//    $query=mysqli_query($db,"DELETE FROM products WHERE product_id='$id'");
+//    if($query){
+//        header("Location: shop.php");
 
-    }else{
-        echo "Unable to proccess your request";
-    }
+//    }else{
+//        echo "Unable to proccess your request";
+//    }
   
-}
+//}
 
 
 //product edit
-if(isset($_POST['insert'])){
+// if(isset($_POST['insert'])){
     
-   $id =  $_SESSION['Fid'];
+//   $id =  $_SESSION['Fid'];
     
     
-    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'")); //Fetch the file which is associated with this account
-    $temp = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'"));
+//    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'")); //Fetch the file which is associated with this account
+//    $temp = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'"));
 
 
-    unlink("images/".$select['image_text']); //Deleting the file
+//    unlink("images/".$select['image_text']); //Deleting the file
 
-    $query=mysqli_query($db,"DELETE FROM products WHERE product_id='$id'");
+//    $query=mysqli_query($db,"DELETE FROM products WHERE product_id='$id'");
     
     
     
-    $target = "images/".basename($_FILES['image']['name']);
+//    $target = "images/".basename($_FILES['image']['name']);
 
 
-    $image = $_FILES['image']['name'];
+//    $image = $_FILES['image']['name'];
    
 
-    $sql = "INSERT INTO products (image) VALUES ('$image')";
-    mysqli_query($db, $sql);
+//    $sql = "INSERT INTO products (image) VALUES ('$image')";
+//    mysqli_query($db, $sql);
     
     
     
-    if($query){
-        header("Location: shop.php");
+//    if($query){
+//        header("Location: shop.php");
 
-    }else{
-        echo "Unable to proccess your request";
-    }
+//    }else{
+ //       echo "Unable to proccess your request";
+//    }
  
-}
+//}
 
 // add to cart
 if(isset($_POST['addcart']))
