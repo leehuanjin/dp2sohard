@@ -1,4 +1,4 @@
-<?php include('server.php');?>
+<?php include('serveracc.php'); ?>
 
 
 <!DOCTYPE html>
@@ -69,9 +69,9 @@
                                     <?php  if (isset($_SESSION['username'])) : ?>
                                     <li><a href="sell.php"><i class="fa fa-money"></i> SELL On Deallo</a></li>
                                     <?php endif ?>
-                                    
-                                    
-                                    <li><a href="" class="active"><i class="fa fa-user"></i> Account</a></li>
+
+
+                                    <li><a href="account.php"><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                     <li><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -87,21 +87,26 @@
 
                                         <!--display the view cart button-->
                                         <input type="image" onclick=getContinueShoppingURL(this.form) src="https://www.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="">
-                                        <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                                        <img alt="" border="0" src="https://www.
+										
+										.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         <input type="hidden" name="display" value="1">
                                         </form>
-                                         <?php 
-                                        if (!isset($_SESSION['username'])){
-                                        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
-                                        }
-                                        else 
-                                        {
-                                            echo "<li><a href='login.php'><i class='fa fa-lock'></i> Logout</a></li>";
-                                        }
+										
+										
+										
+                                        <?php 
+    if (!isset($_SESSION['username'])){
+        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
+    }
+                                    else 
+                                    {
+                                        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Logout</a></li>";
+                                    }
 
                                         ?>
-                                    
-                                    
+
+
                                 </ul>
                             </div>
                         </div>
@@ -124,9 +129,9 @@
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
                                     <li><a href="index.php">Home</a></li>
-                                    <li class="dropdown"><a href="shop.php">Shop<i class="fa fa-angle-down"></i></a>
+                                    <li class="dropdown"><a href="shop.php" class="active">Shop<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
-                                            <li><a href="shop.php">Products</a></li>
+                                            <li><a href="shop.php" class="active">Products</a></li>
                                             <li><a href="checkout.html">Checkout</a></li> 
                                             <li><a href="cart.php">Cart</a></li> 
                                         </ul>
@@ -150,19 +155,120 @@
                 </div>
             </div>
         </header>
-       
-        
-        <div class='container'>
-        <h2>Account details</h2><hr>
-            <div class="username">
-                <p>Username: <?php echo $_SESSION['username']; ?></p>
+
+        <section id="advertisement">
+            <div class="container">
+                <img src="images/shop/advertisement.jpg" alt="" />
             </div>
-            <div class="password">
-                <p>Password: XXXXXX<a href="changepassword.php"> Change Password</a></p>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+                            <h2>Account Details</h2>
+                            <div class="panel-group category-products" id="accordian"><!--/Account Details-->
+                                
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">Change Password</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">Sales History</a></h4>
+                                    </div>
+                                </div>
+                                
+                            </div><!--/Account Details-->
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-9 padding-right">
+                        <div class="features_items"><!--features_items-->
+                            <h2 class="title text-center">Posted Items</h2>
+
+                            
+
+                            <div id="imageModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                            <h4 class="modal-title">Add Image</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="image_form" method="post" enctype="multipart/form-data">
+                                                <p><label>Select Image</label>
+                                                    <input type="file" name="image" id="image" /></p><br />
+                                                <input type="hidden" name="action" id="action" value="insert" />
+                                                <input type="hidden" name="image_id" id="image_id" />
+                                                <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />
+
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <?php
+
+                            while ($row = mysqli_fetch_array($result)) {
+                                
+                               
+                                echo "<form enctype='multipart/form-data' method='post' >";
+                                echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
+
+                                echo "<div class='product-image-wrapper'>";
+
+                                echo "<div class='single-products'>";
+
+                                echo "<div class='productinfo text-center'>";
+
+                                echo "<div id='img_div'>";
+                                echo "<img height='250' src='images/".$row['image']."' >";
+                                echo " <h2>$56</h2>";
+                                echo "<p>".$row['image_text']."</p>";
+                                echo "</div>";
+
+                                 
+
+
+                                $_SESSION['Fid'] = $row['product_id'];
+
+                                echo "<div class='choose'>";
+                                echo  "<ul class='nav nav-pills nav-justified'>";
+
+                                echo  "<input type='submit' name='edit' id='edit' value='edit' data-toggle='modal' data-target='#imageModal'>";
+                                echo  "<input type='submit' name='delete' id='delete'  value='delete'>";
+
+                                echo  "</ul>";
+                                echo  "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</form>";
+                             
+                            }
+                            ?>  
+
+
+                        </div><!--features_items-->
+                    </div>
+                </div>
             </div>
-        </div>
-        
-          <footer id="footer"><!--Footer-->
+        </section>
+
+        <footer id="footer"><!--Footer-->
             <div class="footer-top">
                 <div class="container">
                     <div class="row">
