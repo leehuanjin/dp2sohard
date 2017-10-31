@@ -96,9 +96,11 @@ if (isset($_POST['upload'])) {
 
     $image = $_FILES['image']['name'];
     $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
+    $price = mysqli_real_escape_string($db, $_POST['price']);
+    $category = mysqli_real_escape_string($db, $_POST['category']);
 
 
-    $sql = "INSERT INTO products (name,sku,price,image, image_text) VALUES ('$image_text','$image_text','33 ','$image', '$image_text')";
+    $sql = "INSERT INTO products (image, image_text, price, category) VALUES ('$image', '$image_text', '$price', '$category')";
     mysqli_query($db, $sql);
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
