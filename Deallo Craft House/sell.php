@@ -137,7 +137,7 @@
             <div class="row">
                 <div class="col-sm-9">
                     <h2>Category</h2>
-                    <select class="form-control" name="category" id="category_group" sel_id="">
+                    <select class="form-control" name="category" id="category" sel_id="">
                         <option value="0" selected="selected">Select your category</option>
                         <option  value='main' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- A --</option>
                         <option  value='one'  id='xxxxx'  data-label="label01">  1  </option>
