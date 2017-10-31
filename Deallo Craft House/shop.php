@@ -87,9 +87,14 @@
 
                                         <!--display the view cart button-->
                                         <input type="image" onclick=getContinueShoppingURL(this.form) src="https://www.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="">
-                                        <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                                        <img alt="" border="0" src="https://www.
+										
+										.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         <input type="hidden" name="display" value="1">
                                         </form>
+										
+										
+										
                                         <?php 
     if (!isset($_SESSION['username'])){
         echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
@@ -297,12 +302,14 @@
                     <div class="col-sm-9 padding-right">
                         <div class="features_items"><!--features_items-->
                             <h2 class="title text-center">Features Items</h2>
+
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
                                             <h2>$56</h2>
                                             <p>Sample posted product</p>
+
                                             <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">    
                                                 <!-- Seller's business to collect the payments. -->
                                                 <input type="hidden" name="business" value="seller@deallocraft.com">
@@ -368,8 +375,9 @@
                             <?php
 
                             while ($row = mysqli_fetch_array($result)) {
-
-                                echo "<form enctype='multipart/form-data' method='post' action=''>";
+                                
+                               
+                                echo "<form enctype='multipart/form-data' method='post' action='https://www.paypal.com/cgi-bin/webscr'>";
                                 echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
 
                                 echo "<div class='product-image-wrapper'>";
@@ -382,9 +390,46 @@
                                 echo "<img height='250' src='images/".$row['image']."' >";
                                 echo " <h2>$56</h2>";
                                 echo "<p>".$row['image_text']."</p>";
-                                echo "</div>";  
+                                echo "</div>";
 
-                                $_SESSION['Fid'] = $row['id'];
+
+
+
+                         
+
+                                
+                                echo "<div>";
+                                echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
+
+                                echo " <input type='hidden' name='business' value='seller@deallocraft.com'>";
+
+                                 
+                                    echo "<input type='hidden' name='cmd' value='_cart'>";
+                                    echo "<input type='hidden' name='add' value='1'>";
+
+                              
+                                    echo "<input type='hidden' name='item_name' value='".$row['image_text']."'>";
+                                    echo "<input type='hidden' name='amount' value='".$row['price']."'>";
+                                    echo "<input type='hidden' name='currency_code' value='USD'>";
+
+                        
+                                    echo "<input type='hidden' name='shopping_url' value=''>";
+
+                                 
+                                        
+                                    echo "<input type='image' name='submit' onclick=getContinueShoppingURL(this.form) 
+                                    src='https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png' alt='Add to Cart'>";
+                                        
+                                        
+                                        
+                                    echo "<img alt='' width='1' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' >";
+
+                                   echo "</form>";	
+                                echo"</div>";
+                                 
+
+
+                                $_SESSION['Fid'] = $row['product_id'];
 
                                 echo "<div class='choose'>";
                                 echo  "<ul class='nav nav-pills nav-justified'>";
@@ -399,7 +444,7 @@
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</form>";
-
+                             
                             }
                             ?>  
 
