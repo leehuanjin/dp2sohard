@@ -1,3 +1,4 @@
+    
 
 <?php
 session_start ();
@@ -97,7 +98,7 @@ if (isset($_POST['upload'])) {
     $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
 
 
-    $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    $sql = "INSERT INTO products (name,sku,price,image, image_text) VALUES ('$image_text','$image_text','33 ','$image', '$image_text')";
     mysqli_query($db, $sql);
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
@@ -105,9 +106,11 @@ if (isset($_POST['upload'])) {
     }else{
         $msg = "Failed to upload image";
     }
+    
 }
 
-$result = mysqli_query($db, "SELECT * FROM images");
+
+$result = mysqli_query($db, "SELECT * FROM products");
 
 //product delete
 if(isset($_POST['delete'])){
@@ -116,13 +119,13 @@ if(isset($_POST['delete'])){
    $id =  $_SESSION['Fid'];
     
     
-    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM images WHERE id='$id'")); //Fetch the file which is associated with this account
+    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'")); //Fetch the file which is associated with this account
 
 
 
     unlink("images/".$select['image_text']); //Deleting the file
 
-    $query=mysqli_query($db,"DELETE FROM images WHERE id='$id'");
+    $query=mysqli_query($db,"DELETE FROM products WHERE product_id='$id'");
     if($query){
         header("Location: shop.php");
 
@@ -139,13 +142,13 @@ if(isset($_POST['insert'])){
    $id =  $_SESSION['Fid'];
     
     
-    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM images WHERE id='$id'")); //Fetch the file which is associated with this account
-    $temp = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM images WHERE id='$id'"));
+    $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'")); //Fetch the file which is associated with this account
+    $temp = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'"));
 
 
     unlink("images/".$select['image_text']); //Deleting the file
 
-    $query=mysqli_query($db,"DELETE FROM images WHERE id='$id'");
+    $query=mysqli_query($db,"DELETE FROM products WHERE product_id='$id'");
     
     
     
@@ -155,7 +158,7 @@ if(isset($_POST['insert'])){
     $image = $_FILES['image']['name'];
    
 
-    $sql = "INSERT INTO images (image) VALUES ('$image')";
+    $sql = "INSERT INTO products (image) VALUES ('$image')";
     mysqli_query($db, $sql);
     
     
@@ -168,6 +171,15 @@ if(isset($_POST['insert'])){
     }
  
 }
+
+// add to cart
+if(isset($_POST['addcart']))
+{
+    header("Location: shopping-cart.php");
+}
+
+
+
 
 
 
