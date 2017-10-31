@@ -71,7 +71,7 @@
                                     <?php endif ?>
 
 
-                                    <li><a href=""><i class="fa fa-user"></i> Account</a></li>
+                                    <li><a href="account.php"><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                     <li><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -300,8 +300,8 @@
                     </div>
 
                     <div class="col-sm-9 padding-right">
-                        <div class="features_items"><!--features_items-->
-                            <h2 class="title text-center">Features Items</h2>
+                        <div class="features_items"><!--featured_items-->
+                            <h2 class="title text-center">Featured Items</h2>
 
                             <div class="col-sm-4">
                                 <div class="product-image-wrapper">
@@ -396,7 +396,7 @@
 
 
                          
-                             
+
                                 
                                 echo "<div>";
                                 echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
@@ -420,7 +420,7 @@
                                     echo "<input type='image' name='submit' onclick=getContinueShoppingURL(this.form) 
                                     src='https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png' alt='Add to Cart'>";
                                         
-        
+                                        
                                         
                                     echo "<img alt='' width='1' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' >";
 
@@ -431,7 +431,12 @@
 
                                 $_SESSION['Fid'] = $row['product_id'];
 
-                    
+                                echo "<div class='choose'>";
+                                echo  "<ul class='nav nav-pills nav-justified'>";
+
+                   
+                                echo  "</ul>";
+                                echo  "</div>";
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</div>";
