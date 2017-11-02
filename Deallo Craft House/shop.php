@@ -173,7 +173,6 @@
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
                                             <a href="sportswear.php">
-                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
                                                 Sportswear
                                             </a>
                                         </h4>
