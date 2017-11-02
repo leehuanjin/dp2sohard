@@ -71,7 +71,7 @@
                                     <?php endif ?>
 
 
-                                    <li><a href="account.php"><i class="fa fa-user"></i> Account</a></li>
+                                    <li><a href="account.php" class="active"><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                     <li><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -129,7 +129,7 @@
                             <div class="mainmenu pull-left">
                                 <ul class="nav navbar-nav collapse navbar-collapse">
                                     <li><a href="index.php">Home</a></li>
-                                    <li class="dropdown"><a href="shop.php" class="active">Shop<i class="fa fa-angle-down"></i></a>
+                                    <li class="dropdown"><a href="shop.php">Shop<i class="fa fa-angle-down"></i></a>
                                         <ul role="menu" class="sub-menu">
                                             <li><a href="shop.php" class="active">Products</a></li>
                                             <li><a href="checkout.html">Checkout</a></li> 
