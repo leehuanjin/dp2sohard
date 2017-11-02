@@ -139,12 +139,20 @@
                     <h2>Category</h2>
                     <select class="form-control" name="category" id="category" sel_id="">
                         <option value="0" selected="selected">Select your category</option>
-                        <option  value='main' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- A --</option>
-                        <option  value='one'  id='xxxxx'  data-label="label01">  1  </option>
-                        <option  value='two'  id='xxxxx'  data-label="label02">  2  </option>
-                        <option  value='mainb' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- B --</option>
-                        <option  value='one'  id='xxxxx'  data-label="label01">  1  </option>
-                        <option  value='two'  id='xxxxx'  data-label="label02">  2  </option>
+                        <option  value='main' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- SPORTSWEAR --</option>
+                        <option  value='one'  id='xxxxx'  data-label="label01">  ADIDAS  </option>
+                        <option  value='two'  id='xxxxx'  data-label="label02">  NIKE  </option>
+                        <option  value='two'  id='xxxxx'  data-label="label02">  ASICS  </option>
+                        <option  value='two'  id='xxxxx'  data-label="label02">  PUMA  </option>
+                        <option  value='two'  id='xxxxx'  data-label="label02">  SKETCHERS  </option>
+                        <option  value='two'  id='xxxxx'  data-label="label02">  OTHERS  </option>
+                        <option  value='mainb' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- MENS --</option>
+                        <option  value='one'  id='xxxxx'  data-label="label01">  HUGO BOSS  </option>
+                        <option  value='two'  id='xxxxx'  data-label="label02">  RALPH LAUREN  </option>
+                        <option  value='one'  id='xxxxx'  data-label="label01">  LEVI  </option>
+                        <option  value='one'  id='xxxxx'  data-label="label01">  GUCCI  </option>
+                        <option  value='one'  id='xxxxx'  data-label="label01">  TIMBERLAND  </option>
+                        <option  value='one'  id='xxxxx'  data-label="label01">  OTHERS  </option>
                     </select>
                 </div>
             </div>
