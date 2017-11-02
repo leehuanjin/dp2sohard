@@ -1,5 +1,4 @@
     
-
 <?php
 session_start ();
 $username = "";
@@ -98,13 +97,24 @@ if (isset($_POST['upload'])) {
     $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
     $price = mysqli_real_escape_string($db, $_POST['price']);
     $category = mysqli_real_escape_string($db, $_POST['category']);
-
+    
+   
 
     $sql = "INSERT INTO products (image, image_text, price, category) VALUES ('$image', '$image_text', '$price', '$category')";
     mysqli_query($db, $sql);
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
         $msg = "Image uploaded successfully";
+        if ($category == "SPORTSWEAR")
+        {
+             header("Location: sportswear.php");
+        }
+        elseif ($category == "MENS")
+        {
+            header("Location: mens.php");
+        }
+        
+        
     }else{
         $msg = "Failed to upload image";
     }

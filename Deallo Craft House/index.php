@@ -69,7 +69,7 @@
                                     <?php  if (isset($_SESSION['username'])) : ?>
                                     <li><a href="sell.php"><i class="fa fa-money"></i> SELL On Deallo</a></li>
                                     <?php endif ?>
-                                    <li><a href="#"><i class="fa fa-user"></i> Account</a></li>
+                                    <li><a href="account.php"><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
                                     <li><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -157,7 +157,7 @@
                                             <li><a href="blog-single.html">Blog Single</a></li>
                                         </ul>
                                     </li> 
-                                    <li><a href="404.html">404</a></li>
+                                    
                                     <li><a href="contact-us.html">Contact</a></li>
                                 </ul>
                             </div>

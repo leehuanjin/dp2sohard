@@ -173,30 +173,13 @@
                                         </h4>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
+                                   <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordian" href="#mens">
-                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
-                                                Mens
+                                            <a href="mens.php">
+                                                MENS
                                             </a>
                                         </h4>
-                                    </div>
-                                    <div id="mens" class="panel-collapse collapse">
-                                        <div class="panel-body">
-                                            <ul>
-                                                <li><a href="">Fendi</a></li>
-                                                <li><a href="">Guess</a></li>
-                                                <li><a href="">Valentino</a></li>
-                                                <li><a href="">Dior</a></li>
-                                                <li><a href="">Versace</a></li>
-                                                <li><a href="">Armani</a></li>
-                                                <li><a href="">Prada</a></li>
-                                                <li><a href="">Dolce and Gabbana</a></li>
-                                                <li><a href="">Chanel</a></li>
-                                                <li><a href="">Gucci</a></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -338,41 +321,66 @@
                                 </div>
                             </div>
 
-
-
-
-
-
-                            <?php
                             
+                           
+                           <?php
                             while ($row = mysqli_fetch_array($result)) {
                                 
-                                echo "<form enctype='multipart/form-data' method='post' action=''>";
+                                if($row['category'] =="SPORTSWEAR"){
+                                echo "<form enctype='multipart/form-data' method='post' action='https://www.paypal.com/cgi-bin/webscr'>";
                                 echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
-                                
+
                                 echo "<div class='product-image-wrapper'>";
-                              
+
                                 echo "<div class='single-products'>";
-                                
+
                                 echo "<div class='productinfo text-center'>";
-                                
+
                                 echo "<div id='img_div'>";
                                 echo "<img height='250' src='images/".$row['image']."' >";
-                                echo " <h2>$56</h2>";
-                                echo "<p>".$row['image_text']."</p>";
-                                echo "</div>";  
-                               
-                                $_SESSION['Fid'] = $row['id'];
+                                echo "<h2>$".$row['price']."</h2>";
+                                echo "<h3>".$row['image_text']."</h3>";
                                 
+                                echo "</div>";
+
+                                
+                                echo "<div>";
+                                echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
+
+                                echo " <input type='hidden' name='business' value='seller@deallocraft.com'>";
+
+                                 
+                                    echo "<input type='hidden' name='cmd' value='_cart'>";
+                                    echo "<input type='hidden' name='add' value='1'>";
+
+                              
+                                    echo "<input type='hidden' name='item_name' value='".$row['image_text']."'>";
+                                    echo "<input type='hidden' name='amount' value='".$row['price']."'>";
+                                    echo "<input type='hidden' name='currency_code' value='USD'>";
+
+                        
+                                    echo "<input type='hidden' name='shopping_url' value=''>";
+
+                                 
+                                        
+                                    echo "<input type='image' name='submit' onclick=getContinueShoppingURL(this.form) 
+                                    src='https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png' alt='Add to Cart'>";
+                                        
+                                        
+                                        
+                                    echo "<img alt='' width='1' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' >";
+
+                                   echo "</form>";	
+                                echo"</div>";
+                                 
+
+
+                                $_SESSION['Fid'] = $row['product_id'];
+
                                 echo "<div class='choose'>";
                                 echo  "<ul class='nav nav-pills nav-justified'>";
-                               
-                                echo  "<input type='submit' name='edit' id='edit' value='edit'>";
-                                echo  "<input type='submit' name='delete' id='delete'  value='delete'>";
-                                
-                                
-                                
-                               
+
+                   
                                 echo  "</ul>";
                                 echo  "</div>";
                                 echo "</div>";
@@ -380,10 +388,10 @@
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</form>";
-
+                            }
                             }
                             ?>  
-
+                         
 
                         </div><!--features_items-->
                     </div>
