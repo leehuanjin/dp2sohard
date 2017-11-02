@@ -182,8 +182,8 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a href="clothes.php">
-                                                Clothes
+                                            <a href="mens.php">
+                                                MENS
                                             </a>
                                         </h4>
                                     </div>
