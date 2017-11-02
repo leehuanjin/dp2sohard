@@ -91,7 +91,7 @@
 										
 										.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         <input type="hidden" name="display" value="1">
-                                        </form>
+					    </form></li>
 										
 										
 										
