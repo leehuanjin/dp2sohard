@@ -269,49 +269,6 @@
                         <div class="features_items"><!--featured_items-->
                             <h2 class="title text-center">Featured Items</h2>
 
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <h2>$56</h2>
-                                            <p>Sample posted product</p>
-
-                                            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">    
-                                                <!-- Seller's business to collect the payments. -->
-                                                <input type="hidden" name="business" value="seller@deallocraft.com">
-
-                                                <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
-                                                <input type="hidden" name="cmd" value="_cart">
-                                                <input type="hidden" name="add" value="1">
-
-                                                <!-- Specify details about the item that buyers will purchase. -->
-                                                <input type="hidden" name="item_name" value="Sample posted product">
-                                                <input type="hidden" name="amount" value="56">
-                                                <input type="hidden" name="currency_code" value="USD">
-
-                                                <!-- Continue shopping on the current webpage of the merchant site. -->
-                                                <!-- The below value is replaced when buyers click Add to Cart -->
-                                                <input type="hidden" name="shopping_url" value="">
-
-                                                <!-- Display the add to cart button -->
-                                                <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
-                                                <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-
-                                            </form>	       
-
-                                        </div>
-
-
-                                    </div>
-                                    <div class="choose">
-                                        <ul class="nav nav-pills nav-justified">
-                                            <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                            <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div id="imageModal" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
