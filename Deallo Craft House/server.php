@@ -1,4 +1,4 @@
-    
+
 <?php
 session_start ();
 $username = "";
@@ -97,8 +97,8 @@ if (isset($_POST['upload'])) {
     $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
     $price = mysqli_real_escape_string($db, $_POST['price']);
     $category = mysqli_real_escape_string($db, $_POST['category']);
-    
-   
+
+
 
     $sql = "INSERT INTO products (image, image_text, price, category) VALUES ('$image', '$image_text', '$price', '$category')";
     mysqli_query($db, $sql);
@@ -107,18 +107,38 @@ if (isset($_POST['upload'])) {
         $msg = "Image uploaded successfully";
         if ($category == "SPORTSWEAR")
         {
-             header("Location: sportswear.php");
+            header("Location: sportswear.php");
         }
         elseif ($category == "MENS")
         {
             header("Location: mens.php");
         }
-        
-        
+        elseif ($category == "WOMENS")
+        {
+            header("Location: womens.php");
+        }
+        elseif ($category == "KIDS")
+        {
+            header("Location: kids.php");
+        }
+        elseif ($category == "HOUSEHOLDS")
+        {
+            header("Location: households.php");
+        }
+        elseif ($category == "BAGS")
+        {
+            header("Location: bags.php");
+        }
+        elseif ($category == "ELECTRONICS")
+        {
+            header("Location: electronics.php");
+        }
+
+
     }else{
         $msg = "Failed to upload image";
     }
-    
+
 }
 
 
@@ -128,9 +148,9 @@ $result = mysqli_query($db, "SELECT * FROM products");
 if(isset($_POST['delete'])){
 
 
-   $id =  $_SESSION['Fid'];
-    
-    
+    $id =  $_SESSION['Fid'];
+
+
     $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'")); //Fetch the file which is associated with this account
 
 
@@ -144,16 +164,16 @@ if(isset($_POST['delete'])){
     }else{
         echo "Unable to proccess your request";
     }
-  
+
 }
 
 
 //product edit
- if(isset($_POST['insert'])){
-    
-   $id =  $_SESSION['Fid'];
-    
-    
+if(isset($_POST['insert'])){
+
+    $id =  $_SESSION['Fid'];
+
+
     $select = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'")); //Fetch the file which is associated with this account
     $temp = mysqli_fetch_assoc(mysqli_query($db,"SELECT image_text FROM products WHERE product_id='$id'"));
 
@@ -161,27 +181,27 @@ if(isset($_POST['delete'])){
     unlink("images/".$select['image_text']); //Deleting the file
 
     $query=mysqli_query($db,"DELETE FROM products WHERE product_id='$id'");
-    
-    
-    
+
+
+
     $target = "images/".basename($_FILES['image']['name']);
 
 
     $image = $_FILES['image']['name'];
-   
+
 
     $sql = "INSERT INTO products (image) VALUES ('$image')";
     mysqli_query($db, $sql);
-    
-    
-    
+
+
+
     if($query){
         header("Location: account.php");
 
     }else{
-       echo "Unable to proccess your request";
+        echo "Unable to proccess your request";
     }
- 
+
 }
 
 // add to cart
