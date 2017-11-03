@@ -195,53 +195,36 @@
                                     <div id="womens" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <ul>
-                                                <li><a href="">Fendi</a></li>
-                                                <li><a href="">Guess</a></li>
-                                                <li><a href="">Valentino</a></li>
-                                                <li><a href="">Dior</a></li>
-                                                <li><a href="">Versace</a></li>
+                                                <li><a href="womens.php">Fendi</a></li>
+                                                <li><a href="womens.php">Guess</a></li>
+                                                <li><a href="womens.php">Valentino</a></li>
+                                                <li><a href="womens.php">Dior</a></li>
+                                                <li><a href="womens.php">Versace</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Kids</a></h4>
+                                        <h4 class="panel-title"><a href="kids.php">Kids</a></h4>
                                     </div>
                                 </div>
+
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Fashion</a></h4>
+                                        <h4 class="panel-title"><a href="households.php">Households</a></h4>
                                     </div>
                                 </div>
+                 
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Households</a></h4>
+                                        <h4 class="panel-title"><a href="bags.php">Bags</a></h4>
                                     </div>
                                 </div>
+             
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Interiors</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Clothing</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Bags</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Shoes</a></h4>
-                                    </div>
-                                </div>
-                                <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="#">Electronics</a></h4>
+                                        <h4 class="panel-title"><a href="electronics.php">Electronics</a></h4>
                                     </div>
                                 </div>
                             </div><!--/category-productsr-->
