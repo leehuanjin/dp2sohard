@@ -153,6 +153,25 @@
                         <option  value='MENS'  id='xxxxx'  data-label="label01">  GUCCI  </option>
                         <option  value='MENS'  id='xxxxx'  data-label="label01">  TIMBERLAND  </option>
                         <option  value='MENS'  id='xxxxx'  data-label="label01">  OTHERS  </option>
+                        <option  value='mainc' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- WOMENS --</option>
+                        <option  value='WOMENS'  id='xxxxx'  data-label="label01">  FENDI  </option>
+                        <option  value='WOMENS'  id='xxxxx'  data-label="label02">  GUESS  </option>
+                        <option  value='WOMENS'  id='xxxxx'  data-label="label01">  VALENTINO  </option>
+                        <option  value='WOMENS'  id='xxxxx'  data-label="label01">  DIOR  </option>
+                        <option  value='WOMENS'  id='xxxxx'  data-label="label01">  VERSACE  </option>
+                        <option  value='WOMENS'  id='xxxxx'  data-label="label01">  OTHERS  </option>
+                         <option  value='mainc' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- KIDS --</option>
+                        <option  value='KIDS'  id='xxxxx'  data-label="label01">  KIDS  </option>
+               
+                         <option  value='mainc' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- HOUSEHOLDS --</option>
+                        <option  value='HOUSEHOLDS'  id='xxxxx'  data-label="label01">  HOUSEHOLDS  </option>
+                        
+                          <option  value='mainc' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- BAGS --</option>
+                        <option  value='BAGS'  id='xxxxx'  data-label="label01">  BAGS  </option>
+                        
+                          <option  value='mainc' style='background-color:#dcdcc3;font-weight:bold;color:#000000;' disabled id='cat1000'  data-label="">-- ELECTRONICS --</option>
+                        <option  value='ELECTRONICS'  id='xxxxx'  data-label="label01">  ELECTRONICS  </option>
+    
                     </select>
                 </div>
             </div>
