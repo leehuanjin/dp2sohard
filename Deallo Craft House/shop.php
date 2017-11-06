@@ -88,13 +88,13 @@
                                         <!--display the view cart button-->
                                         <input type="image" onclick=getContinueShoppingURL(this.form) src="https://www.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="">
                                         <img alt="" border="0" src="https://www.
-										
-										.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+
+                                                                    .com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         <input type="hidden" name="display" value="1">
                                         </form>
-										
-										
-										
+
+
+
                                         <?php 
     if (!isset($_SESSION['username'])){
         echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
@@ -147,9 +147,15 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="search_box pull-right">
-                                <input type="text" placeholder="Search"/>
-                            </div>
+                            <form  method="post" action="search.php?go"  id="searchform"> 
+                                <input  type="text" name="name"> 
+                                <input  type="submit" name="search" value="Search"> 
+                            </form> 
+                            <p><a  href="?by=A">A</a> | <a  href="?by=B">B</a> | <a  href="?by=K">K</a></p> 
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -215,7 +221,7 @@
                                         <h4 class="panel-title"><a href="kids.php">Kids</a></h4>
                                     </div>
                                 </div>
-    
+
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title"><a href="households.php">Households</a></h4>
@@ -227,7 +233,7 @@
                                         <h4 class="panel-title"><a href="bags.php">Bags</a></h4>
                                     </div>
                                 </div>
-                
+
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title"><a href="electronics.php">Electronics</a></h4>
@@ -297,7 +303,7 @@
                             <?php
 
                             while ($row = mysqli_fetch_array($result)) {
-                                                              
+
                                 echo "<form enctype='multipart/form-data' method='post' action='https://www.paypal.com/cgi-bin/webscr'>";
                                 echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
 
@@ -311,39 +317,39 @@
                                 echo "<img height='250' src='images/".$row['image']."' >";
                                 echo "<h2>$".$row['price']."</h2>";
                                 echo "<h3>".$row['image_text']."</h3>";
-                                
+
                                 echo "</div>";
 
-                                
+
                                 echo "<div>";
                                 echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
 
                                 echo " <input type='hidden' name='business' value='seller@deallocraft.com'>";
 
-                                 
-                                    echo "<input type='hidden' name='cmd' value='_cart'>";
-                                    echo "<input type='hidden' name='add' value='1'>";
 
-                              
-                                    echo "<input type='hidden' name='item_name' value='".$row['image_text']."'>";
-                                    echo "<input type='hidden' name='amount' value='".$row['price']."'>";
-                                    echo "<input type='hidden' name='currency_code' value='USD'>";
+                                echo "<input type='hidden' name='cmd' value='_cart'>";
+                                echo "<input type='hidden' name='add' value='1'>";
 
-                        
-                                    echo "<input type='hidden' name='shopping_url' value=''>";
 
-                                 
-                                        
-                                    echo "<input type='image' name='submit' onclick=getContinueShoppingURL(this.form) 
+                                echo "<input type='hidden' name='item_name' value='".$row['image_text']."'>";
+                                echo "<input type='hidden' name='amount' value='".$row['price']."'>";
+                                echo "<input type='hidden' name='currency_code' value='USD'>";
+
+
+                                echo "<input type='hidden' name='shopping_url' value=''>";
+
+
+
+                                echo "<input type='image' name='submit' onclick=getContinueShoppingURL(this.form) 
                                     src='https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png' alt='Add to Cart'>";
-                                        
-                                        
-                                        
-                                    echo "<img alt='' width='1' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' >";
 
-                                   echo "</form>";	
+
+
+                                echo "<img alt='' width='1' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' >";
+
+                                echo "</form>";	
                                 echo"</div>";
-                                 
+
 
 
                                 $_SESSION['Fid'] = $row['product_id'];
@@ -351,7 +357,7 @@
                                 echo "<div class='choose'>";
                                 echo  "<ul class='nav nav-pills nav-justified'>";
 
-                   
+
                                 echo  "</ul>";
                                 echo  "</div>";
                                 echo "</div>";
@@ -359,7 +365,7 @@
                                 echo "</div>";
                                 echo "</div>";
                                 echo "</form>";
-                             
+
                             }
                             ?>  
 
