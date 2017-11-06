@@ -142,9 +142,9 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="search_box pull-right">
-                                <input type="text" placeholder="Search"/>
-                            </div>
+                            <div class=" pull-right">
+                                <input class="form-control" type="text"  id="myInput" placeholder="Search"/>
+                            </div>     
                         </div>
                     </div>
                 </div>
@@ -195,37 +195,53 @@
                                     <div id="womens" class="panel-collapse collapse">
                                         <div class="panel-body">
                                             <ul>
-                                                <li><a href="womens.php">Fendi</a></li>
-                                                <li><a href="womens.php">Guess</a></li>
-                                                <li><a href="womens.php">Valentino</a></li>
-                                                <li><a href="womens.php">Dior</a></li>
-                                                <li><a href="womens.php">Versace</a></li>
+                                                <li><a href="">Fendi</a></li>
+                                                <li><a href="">Guess</a></li>
+                                                <li><a href="">Valentino</a></li>
+                                                <li><a href="">Dior</a></li>
+                                                <li><a href="">Versace</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="kids.php">Kids</a></h4>
+                                        <h4 class="panel-title"><a href="#">Kids</a></h4>
                                     </div>
                                 </div>
-                      
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="households.php">Households</a></h4>
+                                        <h4 class="panel-title"><a href="#">Fashion</a></h4>
                                     </div>
                                 </div>
-                
-           
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="bags.php">Bags</a></h4>
+                                        <h4 class="panel-title"><a href="#">Households</a></h4>
                                     </div>
                                 </div>
-                     
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="electronics.php">Electronics</a></h4>
+                                        <h4 class="panel-title"><a href="#">Interiors</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">Clothing</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">Bags</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">Shoes</a></h4>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><a href="#">Electronics</a></h4>
                                     </div>
                                 </div>
                             </div><!--/category-productsr-->
@@ -260,10 +276,53 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-9 padding-right">
-                        <div class="features_items"><!--features_items-->
+                    <div class="col-sm-9 padding-right" >
+                        <div class="features_items"  id="myDIV"><!--features_items-->
                             <h2 class="title text-center">Sportswear</h2>
-                                                      
+                            <div class="col-sm-4">
+                                <div class="product-image-wrapper">
+                                    <div class="single-products">
+                                        <div class="productinfo text-center">
+                                            <h2>$56</h2>
+                                            <p>Sample posted product</p>
+                                            <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">    
+                                                <!-- Seller's business to collect the payments. -->
+                                                <input type="hidden" name="business" value="seller@deallocraft.com">
+
+                                                <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+                                                <input type="hidden" name="cmd" value="_cart">
+                                                <input type="hidden" name="add" value="1">
+
+                                                <!-- Specify details about the item that buyers will purchase. -->
+                                                <input type="hidden" name="item_name" value="Sample posted product">
+                                                <input type="hidden" name="amount" value="56">
+                                                <input type="hidden" name="currency_code" value="USD">
+
+                                                <!-- Continue shopping on the current webpage of the merchant site. -->
+                                                <!-- The below value is replaced when buyers click Add to Cart -->
+                                                <input type="hidden" name="shopping_url" value="">
+
+                                                <!-- Display the add to cart button -->
+                                                <input type="image" name="submit" onclick=getContinueShoppingURL(this.form) src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png" alt="Add to Cart">
+                                                <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+                                            </form>	       
+
+                                        </div>
+
+
+                                    </div>
+                                    <div class="choose">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li><a href=""><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
+                                            <li><a href=""><i class="fa fa-plus-square"></i>Add to compare</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                           
                            <?php
                             while ($row = mysqli_fetch_array($result)) {
                                 
@@ -448,5 +507,15 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.prettyPhoto.js"></script>
         <script src="js/main.js"></script>
+        <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myDIV *").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
     </body>
 </html>
