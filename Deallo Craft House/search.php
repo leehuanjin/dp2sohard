@@ -271,7 +271,7 @@
 
                     <div class="col-sm-9 padding-right">
                         <div class="features_items"><!--featured_items-->
-                            <h2 class="title text-center">Featured Items</h2>
+                            <h2 class="title text-center">Searched Items</h2>
 
                             <div id="imageModal" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
@@ -300,11 +300,11 @@
                             <?php 
                             if(isset($_POST['search'])){ 
                                 if(isset($_GET['go'])){ 
-                                    if(preg_match("/^[  a-zA-Z]+/", $_POST['name'])){ 
+                                    if(preg_match("/^[\w]+$/", $_POST['name'])){ 
                                         $name=$_POST['name']; 
                
                                         //-query  the database table 
-                                        $sql="SELECT  product_id, price, image, image_text, category FROM products WHERE image_text LIKE '%" . $name .  "%'"; 
+                                        $sql="SELECT  product_id, price, image, image_text, category FROM products WHERE image_text LIKE '%" . $name .  "%' or price LIKE '%" . $name .  "%' "; 
                                         //-run  the query against the mysql query function 
                                         $result=mysqli_query($db,$sql); 
                                         //-create  while loop and loop through result set 
