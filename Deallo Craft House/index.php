@@ -330,122 +330,77 @@
                     <div class="col-sm-9 padding-right">
                         <div class="features_items"><!--features_items-->
                             <h2 class="title text-center">Features Items</h2>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="images/home/" alt="" />
-                                            <h2>$56</h2>
-                                            <p>product</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
+                            
+                          
+                        
+           <?php
 
-                                    </div>
-                                    <div class="choose">
-                                        <ul class="nav nav-pills nav-justified">
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="images/home/" alt="" />
-                                            <h2>$56</h2>
-                                            <p>product</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
+                            while ($row = mysqli_fetch_array($result)) {
 
-                                    </div>
-                                    <div class="choose">
-                                        <ul class="nav nav-pills nav-justified">
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="images/home/" alt="" />
-                                            <h2>$56</h2>
-                                            <p>product</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
+                                echo "<form enctype='multipart/form-data' method='post' action='https://www.paypal.com/cgi-bin/webscr'>";
+                                echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
 
-                                    </div>
-                                    <div class="choose">
-                                        <ul class="nav nav-pills nav-justified">
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="images/home/" alt="" />
-                                            <h2>$56</h2>
-                                            <p>product</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
+                                echo "<div class='product-image-wrapper'>";
 
-                                        <img src="images/home/new.png" class="new" alt="" />
-                                    </div>
-                                    <div class="choose">
-                                        <ul class="nav nav-pills nav-justified">
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="images/home/" alt="" />
-                                            <h2>$56</h2>
-                                            <p>product</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
+                                echo "<div class='single-products'>";
 
-                                        <img src="images/home/sale.png" class="new" alt="" />
-                                    </div>
-                                    <div class="choose">
-                                        <ul class="nav nav-pills nav-justified">
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="product-image-wrapper">
-                                    <div class="single-products">
-                                        <div class="productinfo text-center">
-                                            <img src="images/home/" alt="" />
-                                            <h2>$56</h2>
-                                            <p>product</p>
-                                            <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </div>
+                                echo "<div class='productinfo text-center'>";
 
-                                    </div>
-                                    <div class="choose">
-                                        <ul class="nav nav-pills nav-justified">
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to wishlist</a></li>
-                                            <li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                                echo "<div id='img_div'>";
+                                echo "<img height='250' src='images/".$row['image']."' >";
+                                echo "<h2>$".$row['price']."</h2>";
+                                echo "<h3>".$row['image_text']."</h3>";
+
+                                echo "</div>";
+
+
+                                echo "<div>";
+                                echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
+
+                                echo " <input type='hidden' name='business' value='seller@deallocraft.com'>";
+
+
+                                echo "<input type='hidden' name='cmd' value='_cart'>";
+                                echo "<input type='hidden' name='add' value='1'>";
+
+
+                                echo "<input type='hidden' name='item_name' value='".$row['image_text']."'>";
+                                echo "<input type='hidden' name='amount' value='".$row['price']."'>";
+                                echo "<input type='hidden' name='currency_code' value='USD'>";
+
+
+                                echo "<input type='hidden' name='shopping_url' value=''>";
+
+
+
+                                echo "<input type='image' name='submit' onclick=getContinueShoppingURL(this.form) 
+                                    src='https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png' alt='Add to Cart'>";
+
+
+
+                                echo "<img alt='' width='1' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' >";
+
+                                echo "</form>";	
+                                echo"</div>";
+
+
+
+                                $_SESSION['Fid'] = $row['product_id'];
+
+                                echo "<div class='choose'>";
+                                echo  "<ul class='nav nav-pills nav-justified'>";
+
+
+                                echo  "</ul>";
+                                echo  "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</form>";
+
+                            }
+                            ?>  
 
                         </div><!--features_items-->
 
