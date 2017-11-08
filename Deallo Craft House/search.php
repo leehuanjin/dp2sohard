@@ -304,7 +304,7 @@
                                         $name=$_POST['name']; 
                
                                         //-query  the database table 
-                                        $sql="SELECT  product_id, price, image, image_text, category FROM products WHERE image_text LIKE '%" . $name .  "%' or price LIKE '%" . $name .  "%' "; 
+                                        $sql="SELECT  product_id, price, image, image_text, category FROM products WHERE image_text LIKE '%" . $name .  "%' or price LIKE '%" . $name .  "%' or category LIKE '%" . $name .  "%'"; 
                                         //-run  the query against the mysql query function 
                                         $result=mysqli_query($db,$sql); 
                                         //-create  while loop and loop through result set 
