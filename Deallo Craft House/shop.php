@@ -74,9 +74,9 @@
                                     <li><a href="account.php"><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                    <li><form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <li><form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
                                         <!-- Seller's business to collect the payments. -->
-                                        <input type="hidden" name="business" value="seller@deallocraft.com">
+                                        <input type="hidden" name="business" value="seller@deallo.com">
 
                                         <!-- Specify a PayPal Shopping Cart View Cart button. -->
                                         <input type="hidden" name="cmd" value="_cart">
@@ -87,13 +87,9 @@
 
                                         <!--display the view cart button-->
                                         <input type="image" onclick=getContinueShoppingURL(this.form) src="https://www.paypal.com/en_US/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="">
-                                        <img alt="" border="0" src="https://www.
-
-                                                                    .com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                                        <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         <input type="hidden" name="display" value="1">
                                         </form>
-
-
 
                                         <?php 
     if (!isset($_SESSION['username'])){
@@ -304,7 +300,7 @@
 
                             while ($row = mysqli_fetch_array($result)) {
 
-                                echo "<form enctype='multipart/form-data' method='post' action='https://www.paypal.com/cgi-bin/webscr'>";
+                                echo "<form enctype='multipart/form-data' method='post' action='https://www.sandbox.paypal.com/cgi-bin/webscr'>";
                                 echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
 
                                 echo "<div class='product-image-wrapper'>";
@@ -322,9 +318,9 @@
 
 
                                 echo "<div>";
-                                echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
+                                echo " <form target='paypal' action='https://www.sandbox.paypal.com/cgi-bin/webscr' method='post'>";
 
-                                echo " <input type='hidden' name='business' value='seller@deallocraft.com'>";
+                                echo " <input type='hidden' name='business' value='seller@deallo.com'>";
 
 
                                 echo "<input type='hidden' name='cmd' value='_cart'>";
