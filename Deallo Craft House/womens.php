@@ -168,7 +168,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a href="sportswear.php" class="active">
+                                            <a href="sportswear.php">
                                                 Sportswear
                                             </a>
                                         </h4>
@@ -187,7 +187,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                            <a data-toggle="collapse" data-parent="#accordian" href="womens.php" class="active">
                                                 <span class="badge pull-right"><i class="fa fa-plus"></i></span>
                                                 Womens
                                             </a>
