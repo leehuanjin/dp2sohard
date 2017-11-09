@@ -69,8 +69,8 @@
                                     <?php  if (isset($_SESSION['username'])) : ?>
                                     <li><a href="sell.php"><i class="fa fa-money"></i> SELL On Deallo</a></li>
                                     <?php endif ?>
-                                    
-                                    
+
+
                                     <li><a href="account.php"><i class="fa fa-user"></i> Account</a></li>
                                     <li><a href=""><i class="fa fa-star"></i> Wishlist</a></li>
                                     <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
@@ -90,18 +90,18 @@
                                         <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
                                         <input type="hidden" name="display" value="1">
                                         </form>
-                                         <?php 
-                                        if (!isset($_SESSION['username'])){
-                                        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
-                                        }
-                                        else 
-                                        {
-                                            echo "<li><a href='login.php'><i class='fa fa-lock'></i> Logout</a></li>";
-                                        }
+                                        <?php 
+    if (!isset($_SESSION['username'])){
+        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Login</a></li>";
+    }
+                                    else 
+                                    {
+                                        echo "<li><a href='login.php'><i class='fa fa-lock'></i> Logout</a></li>";
+                                    }
 
                                         ?>
-                                    
-                                    
+
+
                                 </ul>
                             </div>
                         </div>
@@ -142,9 +142,10 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                            <div class="search_box pull-right">
-                                <input type="text" placeholder="Search"/>
-                            </div>
+                            <form  method="post" action="search.php?go"  id="searchform"> 
+                                <input  type="text" name="name"> 
+                                <input  type="submit" name="search" value="Search"> 
+                            </form> 
                         </div>
                     </div>
                 </div>
@@ -173,7 +174,7 @@
                                         </h4>
                                     </div>
                                 </div>
-                                      <div class="panel panel-default">
+                                <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
                                             <a href="mens.php">
@@ -209,19 +210,19 @@
                                         <h4 class="panel-title"><a href="kids.php">Kids</a></h4>
                                     </div>
                                 </div>
-         
+
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title"><a href="households.php">Households</a></h4>
                                     </div>
                                 </div>
-   
+
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title"><a href="bags.php">Bags</a></h4>
                                     </div>
                                 </div>
-                  
+
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title"><a href="electronics.php">Electronics</a></h4>
@@ -262,76 +263,76 @@
                     <div class="col-sm-9 padding-right">
                         <div class="features_items"><!--features_items-->
                             <h2 class="title text-center">KIDS</h2>
-                            
-                           <?php
+
+                            <?php
                             while ($row = mysqli_fetch_array($result)) {
-                                
+
                                 if($row['category'] =="KIDS"){
-                                echo "<form enctype='multipart/form-data' method='post' action='https://www.paypal.com/cgi-bin/webscr'>";
-                                echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
+                                    echo "<form enctype='multipart/form-data' method='post' action='https://www.paypal.com/cgi-bin/webscr'>";
+                                    echo "<div class='col-sm-4' enctype='multipart/form-data' method='post'>";
 
-                                echo "<div class='product-image-wrapper'>";
+                                    echo "<div class='product-image-wrapper'>";
 
-                                echo "<div class='single-products'>";
+                                    echo "<div class='single-products'>";
 
-                                echo "<div class='productinfo text-center'>";
+                                    echo "<div class='productinfo text-center'>";
 
-                                echo "<div id='img_div'>";
-                                echo "<img height='250' src='images/".$row['image']."' >";
-                                echo "<h2>$".$row['price']."</h2>";
-                                echo "<h3>".$row['image_text']."</h3>";
-                                
-                                echo "</div>";
+                                    echo "<div id='img_div'>";
+                                    echo "<img height='250' src='images/".$row['image']."' >";
+                                    echo "<h2>$".$row['price']."</h2>";
+                                    echo "<h3>".$row['image_text']."</h3>";
 
-                                
-                                echo "<div>";
-                                echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
+                                    echo "</div>";
 
-                                echo " <input type='hidden' name='business' value='seller@deallocraft.com'>";
 
-                                 
+                                    echo "<div>";
+                                    echo " <form target='paypal' action='https://www.paypal.com/cgi-bin/webscr' method='post'>";
+
+                                    echo " <input type='hidden' name='business' value='seller@deallocraft.com'>";
+
+
                                     echo "<input type='hidden' name='cmd' value='_cart'>";
                                     echo "<input type='hidden' name='add' value='1'>";
 
-                              
+
                                     echo "<input type='hidden' name='item_name' value='".$row['image_text']."'>";
                                     echo "<input type='hidden' name='amount' value='".$row['price']."'>";
                                     echo "<input type='hidden' name='currency_code' value='USD'>";
 
-                        
+
                                     echo "<input type='hidden' name='shopping_url' value=''>";
 
-                                 
-                                        
+
+
                                     echo "<input type='image' name='submit' onclick=getContinueShoppingURL(this.form) 
                                     src='https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png' alt='Add to Cart'>";
-                                        
-                                        
-                                        
+
+
+
                                     echo "<img alt='' width='1' height='1' src='https://www.paypalobjects.com/en_US/i/scr/pixel.gif' >";
 
-                                   echo "</form>";	
-                                echo"</div>";
-                                 
+                                    echo "</form>";	
+                                    echo"</div>";
 
 
-                                $_SESSION['Fid'] = $row['product_id'];
 
-                                echo "<div class='choose'>";
-                                echo  "<ul class='nav nav-pills nav-justified'>";
+                                    $_SESSION['Fid'] = $row['product_id'];
 
-                   
-                                echo  "</ul>";
-                                echo  "</div>";
-                                echo "</div>";
-                                echo "</div>";
-                                echo "</div>";
-                                echo "</div>";
-                                echo "</form>";
-                            }
+                                    echo "<div class='choose'>";
+                                    echo  "<ul class='nav nav-pills nav-justified'>";
+
+
+                                    echo  "</ul>";
+                                    echo  "</div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "</div>";
+                                    echo "</form>";
+                                }
                             }
                             ?>  
-                         
+
 
                         </div><!--features_items-->
                     </div>
