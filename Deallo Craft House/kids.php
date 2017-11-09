@@ -168,7 +168,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-                                            <a href="sportswear.php" class="active">
+                                            <a href="sportswear.php">
                                                 Sportswear
                                             </a>
                                         </h4>
@@ -207,7 +207,7 @@
                                 </div>
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h4 class="panel-title"><a href="kids.php">Kids</a></h4>
+                                        <h4 class="panel-title"><a href="kids.php" class="active">Kids</a></h4>
                                     </div>
                                 </div>
 
