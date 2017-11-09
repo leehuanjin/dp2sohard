@@ -141,10 +141,11 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-sm-3">
-                            <div class="search_box pull-right">
-                                <input type="text" placeholder="Search"/>
-                            </div>
+                             <div class="col-sm-3">
+                            <form  method="post" action="search.php?go"  id="searchform"> 
+                                <input  type="text" name="name"> 
+                                <input  type="submit" name="search" value="Search"> 
+                            </form> 
                         </div>
                     </div>
                 </div>
